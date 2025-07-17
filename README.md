@@ -43,8 +43,18 @@ Columns include:
 
 The dataset was slightly modified and stored in the `/data/` folder as:
 
-### 🔍 Visualisasi: Faktor-faktor yang Berpengaruh terhadap Usia Meninggal
+### 🔍 Visualization: Factors Influencing Age at Death
 
-![Regresi Koefisien](output_charts/regresi_all_the_factor.png)
+![Regression Coefficients](output_charts/regresi_all_the_factor.png)
+
+This regression plot visualizes the impact of various lifestyle and medical factors on the predicted age at death.
+
+🔑 **Key insights:**
+- **Addiction** and **immune deficiency** are among the most influential negative factors, strongly associated with a lower age at death.
+- **Opioid usage** and a high number of alcoholic drinks per week also show a significant negative impact.
+- Meanwhile, variables like **height**, **sex**, and **systolic blood pressure** (excluded in this plot) had minimal influence in this model, suggesting they are less predictive in this dataset.
+
+This reinforces how lifestyle choices and pre-existing medical conditions play a much larger role in life expectancy compared to basic physical attributes.
+
 
 
