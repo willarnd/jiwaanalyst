@@ -1,4 +1,5 @@
-# Life Insurance Claim Analysis 🕊️
+# Life Insurance Claim Analysis 🕊️  
+![Python](https://img.shields.io/badge/Python-3.9-blue)
 
 This project explores patterns in life insurance claim data to understand:  
 **What are the key factors that contribute to early death?**
@@ -30,7 +31,8 @@ This project started with a simple curiosity:
 
 ## 🗂️ Dataset Overview
 
-File: `life_insurance_dataset.xlsx`
+The dataset used in this project was sourced from Kaggle:  
+📎 [Individual Age of Death and Related Factors – Kaggle](https://www.kaggle.com/datasets/joannpineda/individual-age-of-death-and-related-factors/data)
 
 Each row represents a **confirmed life insurance claim** (i.e., the individual has passed away).  
 Columns include:
@@ -39,39 +41,5 @@ Columns include:
 - Health: diabetes, heart disease, cholesterol levels, immune deficiency
 - Family history: cancer, heart disease, cholesterol issues
 
----
-
-## 🔍 Key Findings
-
-### 📊 Age Distribution
-Most claims occurred between the ages of 60–75. However, around 18% of deaths occurred **under age 50**, raising concern.
-
-### 🚬 Lifestyle Impact
-Smokers and opioid users tended to die younger.  
-On average, individuals using opioids passed away **11 years earlier** than non-users.
-
-### 🧬 Family Medical History
-Participants with a family history of **heart disease or cancer** also showed a lower average age at death.
-
-### 📈 Linear Regression Insights
-The most impactful features in predicting early death were:
-- **Immune deficiency**
-- **Addiction and opioid use**
-- **Heart disease and diabetes**
-- **Family health history**
-
-Meanwhile, physical attributes like weight, height, or cholesterol showed minimal influence.
-
----
-
-## 🔧 Tools Used
-
-- **Visual Studio Code** – primary development environment
-- **Python** – for data processing and modeling
-- **pandas, seaborn, matplotlib, scikit-learn** – for EDA, visualization, and regression modeling
-- **Excel** – original data format
-
----
-
-## 📁 Repository Structure
+The dataset was slightly modified and stored in the `/data/` folder as:
 
