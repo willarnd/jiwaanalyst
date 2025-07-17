@@ -43,3 +43,8 @@ Columns include:
 
 The dataset was slightly modified and stored in the `/data/` folder as:
 
+### 🔍 Visualisasi: Faktor-faktor yang Berpengaruh terhadap Usia Meninggal
+
+![Regresi Koefisien](output_charts/regresi_all_the_factor.png)
+
+
