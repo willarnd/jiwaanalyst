@@ -1,13 +1,10 @@
-# Import libraries
+# %% # Import library
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.linear_model import LinearRegression
-from sklearn.preprocessing import LabelEncoder
 
-# Load dataset dari GitHub
-url = "https://raw.githubusercontent.com/willarnd/jiwaanalyst/main/data/life_insurance_dataset.xlsx"
-df = pd.read_excel(url, engine="openpyxl")
+# Load dataset
+df = pd.read_excel("life_insurance_dataset.xlsx")
 
 # Cek struktur data
 print(df.info())
@@ -30,19 +27,18 @@ plt.xlabel("Jenis Kelamin")
 plt.ylabel("Usia")
 plt.show()
 
-# Analisis gaya hidup
+# Bandingkan rata-rata usia berdasarkan gaya hidup
 lifestyle_cols = ['smoker', 'opioids', 'drinks_aweek', 'addiction']
 
 for col in lifestyle_cols:
     plt.figure(figsize=(6,4))
     sns.boxplot(x=col, y='age', data=df)
     plt.title(f"Usia Meninggal Berdasarkan {col.capitalize()}")
-    plt.show()
+    plt.show() 
 
-# Statistik usia perokok vs non-perokok
-print(df.groupby('smoker')['age'].describe())
+#Perokok vs non-perokok
+print(df.groupby('smoker')['age'].describe()) 
 
-# Analisis riwayat keluarga
 family_cols = ['family_cancer', 'family_heart_disease', 'family_cholesterol']
 
 for col in family_cols:
@@ -50,15 +46,26 @@ for col in family_cols:
     sns.boxplot(x=col, y='age', data=df)
     plt.title(f"Usia Meninggal vs {col.replace('_', ' ').title()}")
     plt.show()
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import LabelEncoder
 
-# Regresi linier: pengaruh fitur terhadap usia meninggal
+# Encode variabel kategorikal
 df_model = df.copy()
 categorical_cols = df_model.select_dtypes(include='object').columns
 
 for col in categorical_cols:
     df_model[col] = LabelEncoder().fit_transform(df_model[col])
 
-X = df_model.drop('age', axis=1)
+# Regresi linier: pengaruh fitur terhadap usia meninggal (tanpa fitur tertentu)
+df_model = df.copy()
+categorical_cols = df_model.select_dtypes(include='object').columns
+
+for col in categorical_cols:
+    df_model[col] = LabelEncoder().fit_transform(df_model[col])
+
+# Drop fitur yang tidak ingin dimasukkan ke regresi
+excluded_features = ['sex', 'height', 'sys_bp', 'ls_danger', 'nic_other', 'num_meds']
+X = df_model.drop(columns=['age'] + excluded_features)
 y = df_model['age']
 
 model = LinearRegression()
@@ -72,5 +79,5 @@ feature_importance = pd.DataFrame({
 
 plt.figure(figsize=(10,6))
 sns.barplot(data=feature_importance, x='Coefficient', y='Feature')
-plt.title("Pengaruh Fitur Terhadap Usia Meninggal (Regresi Linier)")
+plt.title("Pengaruh Fitur Terhadap Usia Meninggal (Tanpa Beberapa Variabel)")
 plt.show()
