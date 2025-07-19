@@ -19,7 +19,7 @@ life-insurance-claim-analysis/
 │   └── ...
 ├── requirements.txt                   ← Required Python packages
 └── README.md                          ← You're reading it 😍
-
+```
 
 
 ---
