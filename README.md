@@ -6,19 +6,20 @@ This is my very first project as an aspiring data analyst. I used data from Kagg
 
 ## 📁 Project Structure
 
-
+```plaintext
 life-insurance-claim-analysis/
 │
-├── Life_Insurance_Claim_Analysis.py ← Main Python analysis script
+├── Life_Insurance_Claim_Analysis.py   ← Main Python analysis script
 ├── data/
-│ └── life_insurance_dataset.xlsx ← Raw dataset (from Kaggle)
-├── output_charts/ ← Folder for generated visualizations
-│ ├── age_distribution.png
-│ ├── smoker_vs_age.png
-│ ├── regresi_all_the_factor.png
-│ └── ...
-├── requirements.txt ← Required Python packages
-└── README.md ← You're reading it 😍
+│   └── life_insurance_dataset.xlsx    ← Raw dataset (from Kaggle)
+├── output_charts/                     ← Folder for generated visualizations
+│   ├── age_distribution.png
+│   ├── smoker_vs_age.png
+│   ├── regresi_all_the_factor.png
+│   └── ...
+├── requirements.txt                   ← Required Python packages
+└── README.md                          ← You're reading it 😍
+
 
 
 ---
